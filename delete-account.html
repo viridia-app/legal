@@ -3,124 +3,291 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delete Account – Viridia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Cormorant+Unicase:wght@400;600&display=swap" rel="stylesheet" />
+  <title>Delete Account — Viridia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+Unicase:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #1a1610;
+      --cream:   #F4EEE2;
+      --gold:    #C6A664;
+      --emerald: #284139;
+      --wasabi:  #809076;
+      --earth:   #BB6830;
+      --muted:   rgba(244, 238, 226, 0.55);
+      --rule:    rgba(198, 166, 100, 0.2);
+      --danger:  #c0513a;
+    }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      background-color: #1a1610;
-      color: #F4EEE2;
-      font-family: 'Cormorant Garamond', serif;
-      padding: 48px 24px;
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      padding: 0 1.25rem 5rem;
       max-width: 680px;
       margin: 0 auto;
-      line-height: 1.7;
     }
 
-    h1 {
-      font-size: 2rem;
-      color: #C6A664;
-      margin-bottom: 8px;
-      font-family: 'Cormorant Unicase', serif;
-      letter-spacing: 0.04em;
+    /* ─── Header ─── */
+    .site-header {
+      text-align: center;
+      padding: 3.5rem 0 2rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 2.5rem;
     }
 
-    .divider {
+    .wordmark-link { display: block; margin-bottom: 0.5rem; }
+    .wordmark-img  { height: 44px; width: auto; display: block; margin: 0 auto; }
+
+    .orn {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin: 16px 0 32px;
-      color: #C6A664;
-      font-size: 0.85rem;
-      opacity: 0.6;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 0.75rem 0 1rem;
+    }
+    .orn-line   { width: 240px; height: 1px; background: linear-gradient(to right, transparent, var(--gold)); }
+    .orn-line-r { width: 240px; height: 1px; background: linear-gradient(to left,  transparent, var(--gold)); }
+    .orn-glyph  { color: var(--gold); font-size: 0.7rem; }
+
+    .doc-title {
+      font-family: 'Cormorant Unicase', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
     }
 
-    .divider::before,
-    .divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(to right, transparent, #C6A664, transparent);
+    .doc-meta {
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ─── Warning callout ─── */
+    .warning-callout {
+      background: rgba(192, 81, 58, 0.1);
+      border: 1px solid rgba(192, 81, 58, 0.35);
+      border-radius: 8px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 3rem;
+    }
+
+    .warning-callout-label {
+      font-family: 'Cormorant Unicase', serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #e8957f;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .warning-callout p {
+      font-size: 0.95rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .warning-callout p:last-child { margin-bottom: 0; }
+
+    /* ─── Sections ─── */
+    section {
+      margin-bottom: 2.75rem;
+      scroll-margin-top: 2rem;
     }
 
     h2 {
-      font-size: 1.1rem;
-      color: #C6A664;
-      margin: 28px 0 8px;
       font-family: 'Cormorant Unicase', serif;
-      letter-spacing: 0.03em;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
     }
 
-    p {
-      color: #d4cfc7;
-      margin-bottom: 12px;
+    h2 .sec-num {
+      font-size: 0.7rem;
+      color: var(--cream);
+      opacity: 0.8;
+      font-weight: 400;
+    }
+
+    p { margin-bottom: 0.9rem; color: var(--cream); }
+    p:last-child { margin-bottom: 0; }
+
+    em { color: var(--gold); font-style: italic; }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    /* ─── Step cards ─── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .step-card {
+      background: rgba(244, 238, 226, 0.04);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 1.1rem 1.3rem;
+    }
+
+    .step-label {
+      font-family: 'Cormorant Unicase', serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--wasabi);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .step-card p {
+      font-size: 0.95rem;
+      color: var(--cream);
+      margin-bottom: 0;
+    }
+
+    /* ─── Deleted / Retained lists ─── */
+    .data-list {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .data-list li {
+      color: var(--cream);
+      padding-left: 1.4rem;
+      position: relative;
       font-size: 0.97rem;
     }
 
-    a {
-      color: #C6A664;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(198, 166, 100, 0.3);
+    .data-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--wasabi);
     }
 
-    a:hover {
-      border-bottom-color: #C6A664;
+    /* ─── Footer ─── */
+    .legal-footer {
+      text-align: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--rule);
+      margin-top: 3rem;
     }
 
-    .step {
-      background: rgba(255,255,255,0.04);
-      border-left: 2px solid #C6A664;
-      padding: 14px 18px;
-      margin: 10px 0;
-      border-radius: 0 4px 4px 0;
-      font-size: 0.95rem;
-      color: #d4cfc7;
-    }
-
-    .note {
+    .legal-footer p {
       font-size: 0.85rem;
-      color: #9a9590;
-      margin-top: 32px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(198, 166, 100, 0.15);
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-footer a {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    .legal-footer a:hover { text-decoration: underline; }
+
+    .cross { color: var(--muted); font-size: 0.85rem; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 480px) {
+      body { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
 
-  <h1>Delete Your Account</h1>
-  <div class="divider">✦</div>
+  <header class="site-header">
+    <a href="https://viridia-app.github.io/legal/" class="wordmark-link">
+      <img src="viridia-wordmark.svg" alt="Viridia" class="wordmark-img" />
+    </a>
+    <div class="orn">
+      <span class="orn-line"></span>
+      <span class="orn-glyph">✦</span>
+      <span class="orn-line-r"></span>
+    </div>
+    <p class="doc-title">Delete Account</p>
+    <p class="doc-meta">This action is permanent and cannot be undone.</p>
+  </header>
 
-  <p>
-    You may request the deletion of your Viridia account and all associated personal data at any time.
-    We will process your request within <strong>30 days</strong>.
-  </p>
-
-  <h2>What gets deleted</h2>
-  <p>Upon confirmation, the following data will be permanently removed:</p>
-  <div class="step">Your account credentials and profile information</div>
-  <div class="step">All journal entries and healing log history</div>
-  <div class="step">Your saved cabinet (favorited remedies)</div>
-  <div class="step">Any preferences or settings associated with your account</div>
-
-  <h2>What is retained</h2>
-  <p>
-    Anonymized, non-identifiable usage data may be retained for analytics purposes in accordance
-    with our <a href="https://viridia-app.github.io/legal/viridia-privacy.html">Privacy Policy</a>.
-    No data that can identify you personally will be kept after deletion.
-  </p>
-
-  <h2>How to request deletion</h2>
-  <div class="step">
-    Option 1 — In-app: Go to <strong>Profile → Delete Account</strong> within the Viridia app.
-  </div>
-  <div class="step">
-    Option 2 — By email: Send a request to
-    <a href="mailto:viridia.app@proton.me">viridia.app@proton.me</a>
-    with the subject line <strong>"Delete My Account"</strong> and include the email address
-    associated with your account.
+  <div class="warning-callout">
+    <p class="warning-callout-label">Before You Proceed</p>
+    <p>Deleting your account permanently removes all of your data from Viridia. Your journal entries, cabinet, and remedy log cannot be recovered after deletion.</p>
+    <p>Deleting your account does <em>not</em> cancel an active subscription. You must cancel that separately through your Apple ID subscription settings.</p>
   </div>
 
-  <p class="note">
-    Viridia is developed and operated independently. 
+  <section>
+    <h2><span class="sec-num">01</span> What Gets Deleted</h2>
+    <p>Upon confirmation, the following data is permanently and irreversibly removed:</p>
+    <ul class="data-list">
+      <li>Your account credentials and profile information</li>
+      <li>All healing journal entries and remedy log history</li>
+      <li>Your saved cabinet (favorited remedies)</li>
+      <li>Your check-in history and wellness data</li>
+      <li>Any preferences or settings associated with your account</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="sec-num">02</span> What Is Retained</h2>
+    <p>Anonymized, non-identifiable usage data may be retained for analytics purposes in accordance with our <a href="https://viridia-app.github.io/legal/viridia-privacy.html">Privacy Policy</a>. No data that can identify you personally will be kept after deletion is processed.</p>
+    <p>We will process your request within <strong>30 days</strong> of submission.</p>
+  </section>
+
+  <section>
+    <h2><span class="sec-num">03</span> How to Request Deletion</h2>
+    <p>You have two options:</p>
+    <div class="steps">
+      <div class="step-card">
+        <p class="step-label">Option 1 — In-App</p>
+        <p>Open Viridia, go to your <strong>Profile</strong> screen, and select <em>Delete Account</em>. This is the fastest method and processes immediately.</p>
+      </div>
+      <div class="step-card">
+        <p class="step-label">Option 2 — By Email</p>
+        <p>Send a request to <a href="mailto:viridia.app@proton.me">viridia.app@proton.me</a> with the subject line <strong>"Delete My Account"</strong> and include the email address associated with your account.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="legal-footer">
+    <div class="orn">
+      <span class="orn-line"></span>
+      <span class="orn-glyph">✦</span>
+      <span class="orn-line-r"></span>
+    </div>
+    <p>Viridia is not a brand. It is a reply.</p>
+    <p class="cross">Back to the garden. ✝</p>
+    <br />
+    <a href="https://viridia-app.github.io/legal/viridia-privacy.html">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="https://viridia-app.github.io/legal/viridia-terms-eula.html">Terms of Use</a>
+    &nbsp;·&nbsp;
+    <a href="https://viridia-app.github.io/legal/viridia-support.html">Contact Support</a>
+  </footer>
+
+</body>
+</html>
