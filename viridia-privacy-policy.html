@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Viridia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+Unicase:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #1a1610;
+      --cream:    #F4EEE2;
+      --gold:     #C6A664;
+      --emerald:  #284139;
+      --wasabi:   #809076;
+      --earth:    #BB6830;
+      --muted:    rgba(244, 238, 226, 0.55);
+      --rule:     rgba(198, 166, 100, 0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      padding: 0 1.25rem 5rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ─── Header ─── */
+    .site-header {
+      text-align: center;
+      padding: 3.5rem 0 2rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 2.5rem;
+    }
+
+    .wordmark-link { display: block; margin-bottom: 0.5rem; }
+    .wordmark-img  { height: 44px; width: auto; display: block; margin: 0 auto; }
+
+    .orn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 0.75rem 0 1rem;
+    }
+    .orn-line {
+      width: 240px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+    .orn-line-r {
+      width: 240px;
+      height: 1px;
+      background: linear-gradient(to left, transparent, var(--gold));
+    }
+    .orn-glyph { color: var(--gold); font-size: 0.7rem; }
+
+    .doc-title {
+      font-family: 'Cormorant Unicase', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
+    }
+
+    .doc-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ─── Short version callout ─── */
+    .short-version {
+      background: rgba(40, 65, 57, 0.2);
+      border: 1px solid rgba(128, 144, 118, 0.3);
+      border-radius: 8px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 3rem;
+    }
+
+    .short-version-label {
+      font-family: 'Cormorant Unicase', serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--wasabi);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .short-version p {
+      font-size: 0.95rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .short-version p:last-child { margin-bottom: 0; }
+
+    /* ─── Table of Contents ─── */
+    .toc {
+      background: rgba(198, 166, 100, 0.06);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .toc-title {
+      font-family: 'Cormorant Unicase', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .toc li { counter-increment: toc; }
+
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+      transition: color 0.2s;
+    }
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-family: 'Cormorant Unicase', serif;
+      font-size: 0.7rem;
+      color: var(--gold);
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+    .toc a:hover { color: var(--cream); }
+
+    /* ─── Sections ─── */
+    section {
+      margin-bottom: 2.75rem;
+      scroll-margin-top: 2rem;
+    }
+
+    h2 {
+      font-family: 'Cormorant Unicase', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    h2 .sec-num {
+      font-size: 0.7rem;
+      color: var(--cream);
+      opacity: 0.8;
+      font-weight: 400;
+    }
+
+    p { margin-bottom: 0.9rem; color: var(--cream); }
+    p:last-child { margin-bottom: 0; }
+
+    em { color: var(--gold); font-style: italic; }
+
+    ul {
+      padding-left: 1.4rem;
+      margin-bottom: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    li { color: var(--cream); }
+
+    /* ─── "What we don't do" list ─── */
+    .dont-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .dont-list li {
+      padding-left: 1.4rem;
+      position: relative;
+    }
+
+    .dont-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--wasabi);
+    }
+
+    /* ─── Footer ─── */
+    .legal-footer {
+      text-align: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--rule);
+      margin-top: 3rem;
+    }
+
+    .legal-footer p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-footer a {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    .legal-footer a:hover { text-decoration: underline; }
+
+    .cross { color: var(--muted); font-size: 0.85rem; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 480px) {
+      body { font-size: 1rem; }
+      .wordmark { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="https://viridia-app.github.io/legal/" class="wordmark-link">
+      <img src="viridia-wordmark.svg" alt="Viridia" class="wordmark-img" />
+    </a>
+    <div class="orn">
+      <span class="orn-line"></span>
+      <span class="orn-glyph">✦</span>
+      <span class="orn-line-r"></span>
+    </div>
+    <p class="doc-title">Privacy Policy</p>
+    <p class="doc-meta">Effective March 2026 &nbsp;·&nbsp; App version 1.0+</p>
+  </header>
+
+  <div class="short-version">
+    <p class="short-version-label">The Short Version</p>
+    <p>We collect your email address and your in-app activity. We do not sell your data. We do not share your data with advertisers. We use anonymous analytics to understand how the app is being used. You can delete everything at any time.</p>
+    <p>That is the honest summary. The rest of this document is the full version.</p>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#s1">What We Collect</a></li>
+      <li><a href="#s2">Analytics</a></li>
+      <li><a href="#s3">What We Don't Do</a></li>
+      <li><a href="#s4">Data Storage &amp; Security</a></li>
+      <li><a href="#s5">Your Rights</a></li>
+      <li><a href="#s6">California Users (CCPA)</a></li>
+      <li><a href="#s7">EU / UK Users (GDPR)</a></li>
+      <li><a href="#s8">Children</a></li>
+      <li><a href="#s9">Breach Notification</a></li>
+      <li><a href="#s10">Contact</a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <h2><span class="sec-num">01</span> What We Collect</h2>
+    <p>When you create an account, we collect your email address. That is the only personally identifying information we ask for.</p>
+    <p>When you use the app, we store the following on your behalf:</p>
+    <ul>
+      <li>Your saved remedies (My Cabinet)</li>
+      <li>Your healing journal entries</li>
+      <li>Your remedy log entries</li>
+      <li>Your app preferences and settings</li>
+    </ul>
+    <p>This data is stored in your account and is not accessible to other users. Row-level security is enforced at the database level — your data is yours.</p>
+    <p>We do not collect your name, your location, your device identifiers, or any health information beyond what you voluntarily enter into the app.</p>
+  </section>
+
+  <section id="s2">
+    <h2><span class="sec-num">02</span> Analytics</h2>
+    <p>We use PostHog for product analytics. This helps us understand which features are used, where people drop off, and what to build next.</p>
+    <p>PostHog receives anonymous usage events — things like "remedy viewed" or "body oracle searched." It does not receive your email address, your journal entries, or any identifiable health information. PostHog does not sell data to third parties.</p>
+    <p>If you would like to understand PostHog's privacy practices, their documentation is public at <a href="https://posthog.com/privacy" style="color: var(--gold);">posthog.com/privacy</a>.</p>
+  </section>
+
+  <section id="s3">
+    <h2><span class="sec-num">03</span> What We Don't Do</h2>
+    <ul class="dont-list">
+      <li>We do not sell your data. Not to anyone. Not ever.</li>
+      <li>We do not share your data with advertisers or ad networks.</li>
+      <li>We do not use tracking pixels, Facebook Pixel, Google Analytics, or any tool that pipes your health data to a third party.</li>
+      <li>We do not build advertising profiles from your usage.</li>
+      <li>We do not share your data with other users.</li>
+      <li>We do not access your journal entries, cabinet, or remedy log for any purpose other than displaying them to you.</li>
+    </ul>
+  </section>
+
+  <section id="s4">
+    <h2><span class="sec-num">04</span> Data Storage &amp; Security</h2>
+    <p>Your data is stored in Supabase, a cloud database provider. Supabase uses industry-standard encryption at rest and in transit. Access to your data is controlled by row-level security policies — the app can only read or write data that belongs to your account.</p>
+    <p>We are a small operation. We don't have a security team. We do have a correct architecture, RLS enforced at the database level, and no third-party data sharing. That is the honest picture.</p>
+  </section>
+
+  <section id="s5">
+    <h2><span class="sec-num">05</span> Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Access the data we hold about you</li>
+      <li>Correct inaccurate data</li>
+      <li>Delete your account and all associated data</li>
+      <li>Export your healing journal (coming in a future update)</li>
+    </ul>
+    <p>To delete your account, go to your profile screen and select <em>Delete Account</em>. This removes your account and all associated data permanently. It is not reversible. Note that deleting your account does not automatically cancel an active subscription — you must cancel that separately through your Apple ID subscription settings.</p>
+    <p>For any other data requests, contact us directly at <a href="mailto:viridia.app@proton.me" style="color: var(--gold);">viridia.app@proton.me</a>.</p>
+  </section>
+
+  <section id="s6">
+    <h2><span class="sec-num">06</span> California Users (CCPA)</h2>
+    <p>If you are a California resident, you have rights under the California Consumer Privacy Act. These include the right to know what data we collect, the right to delete it, and the right to opt out of the sale of your personal information.</p>
+    <p>We do not sell personal information. The opt-out right is already exercised by default.</p>
+    <p>To exercise your right to know or delete, use the account deletion feature in the app or contact us.</p>
+  </section>
+
+  <section id="s7">
+    <h2><span class="sec-num">07</span> EU / UK Users (GDPR)</h2>
+    <p>If you are in the European Union or United Kingdom, the GDPR gives you rights over your personal data. Our lawful basis for processing your data is the performance of our contract with you — providing the app you signed up for.</p>
+    <p>You have the right to access, correct, port, and erase your data. Contact us to exercise these rights, or use the in-app deletion flow for erasure.</p>
+    <p>We do not transfer your data outside of jurisdictions covered by adequate data protection frameworks without appropriate safeguards.</p>
+  </section>
+
+  <section id="s8">
+    <h2><span class="sec-num">08</span> Children</h2>
+    <p>Viridia is not designed for or directed at children under 13. We do not knowingly collect data from children. If we become aware that a child under 13 has created an account, we will delete it.</p>
+  </section>
+
+  <section id="s9">
+    <h2><span class="sec-num">09</span> Breach Notification</h2>
+    <p>In the event of a data breach affecting your personally identifiable information, we will notify you by email without unreasonable delay and within 60 calendar days of discovery. If a breach affects 500 or more users, we will also notify the FTC as required by the Health Breach Notification Rule.</p>
+    <p>We will tell you what happened, what data was affected, and what we are doing about it. No corporate boilerplate. Just the facts.</p>
+  </section>
+
+  <section id="s10">
+    <h2><span class="sec-num">10</span> Contact</h2>
+    <p>Questions about your data or this policy:</p>
+    <p><a href="mailto:viridia.app@proton.me" style="color: var(--gold);">viridia.app@proton.me</a></p>
+    <p>We're a small team. We read our messages.</p>
+  </section>
+
+  <footer class="legal-footer">
+    <div class="orn">
+      <span class="orn-line"></span>
+      <span class="orn-glyph">✦</span>
+      <span class="orn-line-r"></span>
+    </div>
+    <p>Viridia is not a brand. It is a reply.</p>
+    <p class="cross">Back to the garden. ✝</p>
+    <br />
+    <a href="https://viridia-app.github.io/legal/viridia-terms.html">Terms of Use (EULA)</a>
+    &nbsp;·&nbsp;
+    <a href="https://viridia-app.github.io/legal/">Legal Home</a>
+  </footer>
+
+</body>
+</html>
